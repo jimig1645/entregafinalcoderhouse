@@ -1,0 +1,890 @@
+@import "utilities/variables";
+
+* {
+    @include reset;
+    font-family: 'Piazzolla', serif;
+
+}
+
+
+h1,
+h2,
+h3 {
+    @include predeterminado;
+
+}
+
+body {
+    background: rgb(242, 247, 175);
+    background: linear-gradient(0deg, rgba(242, 247, 175, 1) 0%, rgba(247, 250, 203, 1) 8%, rgba(243, 244, 238, 1) 43%, rgba(229, 244, 249, 1) 59%);
+
+}
+
+.bodyP {
+    height: 390vh;
+
+}
+
+
+// header aplicable a todos los html salvo enlaces a las otras páginas
+
+header {
+    height: ($altura-frecuente)/2;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/DefPuebloCABA_-_Esquina_Homero_Manzi_Boedo.jpg/4592px-Mapcarta.jpg);
+    background-repeat: no-repeat;
+    background-position-y: 39.95%;
+    background-position-x: 60%;
+    background-clip: inherit;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 5%;
+        font-size: 40px;
+
+    }
+
+    .contenedor {
+        display: flex;
+        justify-content: space-around;
+
+        @keyframes girar {
+            from {
+                transform: isolate(0deg);
+
+            }
+
+            to {
+                transform: rotate(-360deg);
+
+            }
+
+        }
+
+        .contenedor__logo img {
+            animation-name: girar;
+            animation-iteration-count: infinite;
+            animation-duration: 25s;
+            margin-top: -30%;
+            margin-left: -100%;
+            border-radius: 100%;
+
+        }
+
+        ul {
+            padding-left: -5em;
+            display: flex;
+            justify-items: space-around;
+            background-color: rgb(128, 128, 128);
+            border-right: solid;
+            border-bottom: solid;
+            border-color: none;
+
+            li {
+                list-style: none;
+                border-right: solid;
+                border-color: none;
+                padding-right: 10px;
+                padding-left: 10px;
+
+                button {
+                    font-weight: bolder;
+                    background-color: grey;
+                    border: none;
+
+                    a {
+                        text-decoration: none;
+                        color: black;
+
+                    }
+
+                }
+
+            }
+
+            .contacto {
+                border-right: none;
+
+                button {
+                    font-weight: bolder;
+                    background-color: grey;
+                    border: none;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.general {
+    //grid
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "main""section";
+
+    main {
+        grid-area: "main";
+        display: flex;
+        flex-flow: column;
+        padding-top: 5em;
+        height: $altura-frecuente *2.5;
+
+        .quienesSomos {
+            text-align: center;
+            padding-left: 3em;
+            margin-right: 3em;
+            padding-top: 2em;
+            padding-bottom: 10.9em;
+
+        }
+
+        .quienesSomos__titulo {
+            font-size: xx-large;
+            margin-top: 2vh;
+
+        }
+
+        .grupos {
+            h3 {
+                text-align: center;
+
+            }
+
+        }
+
+        .gruposLiterarios {
+            justify-content: center;
+            height: 70vh;
+            padding-top: 5em;
+            padding-bottom: 0.8em;
+
+            .boedo {
+                text-align: center;
+
+                a:link {
+                    text-decoration: none;
+
+                }
+
+            }
+
+            .florida {
+                text-align: center;
+
+                a:link {
+                    text-decoration: none;
+
+                }
+
+            }
+
+        }
+
+        .tango {
+            padding-bottom: 7.2em;
+            padding-top: 2em;
+
+            p {
+                text-align: center;
+                background: rgb(247, 250, 207);
+                background: radial-gradient(circle, rgba(247, 250, 207, 1) 0%, rgba(210, 212, 181, 1) 23%, rgba(236, 244, 247, 1) 100%);
+                margin-left: 6em;
+                margin-right: 8em;
+                padding-top: 2em;
+                border-style: groove;
+
+            }
+
+        }
+
+    }
+
+    .imagenes {
+        //grid
+        grid-area: "section";
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "homeroManzi""robertoArlt""borges";
+        gap: 3em;
+        border-width: 0.4em;
+        height: 25em;
+        padding-top: 5em;
+        padding-right: 5em;
+
+        @keyframes girar2 {
+            from {
+                transform: isolate(0deg);
+
+            }
+
+            to {
+                transform: rotate(180deg);
+
+            }
+
+        }
+
+        .homeroManzi {
+            grid-area: "homeroManzi";
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-content: center;
+            margin-top: 8em;
+            border-radius: 60%;
+            border-left: solid gray;
+            border-right: solid gray;
+            border-width: 0.3em;
+
+            img {
+                width: 130px;
+                height: 200px;
+
+            }
+
+            .buttonSection {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: larger;
+                border: none;
+                background-color: grey;
+                text-align: center;
+                border-bottom-left-radius: 30%;
+                border-bottom-right-radius: 30%;
+
+            }
+
+        }
+
+        .robertoArlt {
+            grid-area: "robertoArlt";
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-content: center;
+            border-radius: 60%;
+            border-left: solid gray;
+            border-right: solid gray;
+            border-width: 0.3em;
+
+            img {
+                animation-name: girar2;
+                animation-iteration-count: 1;
+                animation-duration: 5s;
+                width: 130px;
+                height: 200px;
+
+            }
+
+            .buttonSection1 {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: larger;
+                border: none;
+                background-color: grey;
+                text-align: center;
+                border-bottom-left-radius: 30%;
+                border-bottom-right-radius: 30%;
+
+            }
+
+        }
+
+        .borges {
+            grid-area: "borges";
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-content: center;
+            border-radius: 60%;
+            border-left: solid gray;
+            border-right: solid gray;
+            border-width: 0.3em;
+
+            img {
+                width: 130px;
+                height: 200px;
+
+            }
+
+            .buttonSection {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: larger;
+                border: none;
+                background-color: grey;
+                text-align: center;
+                border-bottom-left-radius: 30%;
+                border-bottom-right-radius: 30%;
+
+            }
+
+        }
+
+    }
+
+}
+
+
+main {
+    height: $altura-frecuente *2.5;
+
+    .h2Jb {
+        padding-top: 2em;
+        text-align: center;
+        margin-bottom: 1em;
+
+    }
+
+    .soneto {
+        text-align: center;
+        margin-top: 5em;
+        padding-top: 3em;
+        padding-bottom: 3em;
+        margin-left: 4em;
+        margin-right: 4em;
+        border-style: groove;
+        background: rgb(247, 250, 207);
+        background: radial-gradient(circle, rgba(247, 250, 207, 1) 0%, rgba(210, 212, 181, 1) 23%, rgba(236, 244, 247, 1) 100%);
+
+    }
+
+    .librosJb {
+        .librosJb__h2 {
+            text-align: center;
+            padding-top: 3em;
+
+        }
+
+        .librosJb__carousel {
+            display: flex;
+            justify-content: center;
+
+            .carousel-inner {
+                width: 30em;
+
+            }
+
+        }
+
+    }
+
+    .mb-3 {
+        padding-left: 2em;
+        padding-right: 2em;
+
+        h2 {
+            margin-top: 2em;
+            margin-bottom: 2em;
+            text-align: center;
+
+        }
+
+    }
+
+    .enviar {
+        display: flex;
+        justify-content: center;
+
+        a {
+
+            button {
+                border-radius: 20%;
+                padding: 0.5em;
+                border: none;
+                font-weight: bolder;
+                font-size: 1.5em;
+
+            }
+
+        }
+
+    }
+
+}
+
+.mapa {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    padding-bottom: 15em;
+    padding-top: 10em;
+
+    h2 {
+        text-align: center;
+        padding-bottom: 2em;
+
+    }
+
+}
+
+.generalDos {
+    main {
+        margin-top: -2em;
+        height: $altura-frecuente *3.2;
+
+        .h2Hm {
+            text-align: center;
+            padding-top: 2em;
+            margin: 1em;
+
+        }
+
+        .productosHomero {
+            @include flex;
+            justify-content: center;
+            gap: 6em;
+
+            .productosHomero__darienzo {
+                padding-bottom: 8.3em;
+
+                .logoHm {
+                    width: 20em;
+                    box-shadow: 5px 5px rgb(82, 78, 78);
+
+                }
+
+                .logoHm:hover {
+                    transform: scale(1.3);
+
+                }
+
+                .pHm {
+                    text-align: center;
+                    font-size: 2em;
+                    font-weight: bolder;
+
+                }
+
+                .buttonHm {
+                    margin-left: 2em;
+                    background-color: rgb(189, 175, 175);
+                    padding-left: 5em;
+                    padding-right: 5em;
+                    font-size: 1em;
+                    font-weight: bolder;
+                    border-color: rgb(173, 173, 224);
+
+                }
+
+            }
+
+            .productosHomero__troilo {
+                @extend .productosHomero__darienzo;
+
+            }
+
+            .porductosHomero__goyeneche {
+                @extend .productosHomero__darienzo;
+
+            }
+
+            .productosHomero__discepolo {
+                @extend .productosHomero__darienzo;
+
+            }
+
+            .productosHomero__disarli {
+                @extend .productosHomero__darienzo;
+
+            }
+
+        }
+
+    }
+
+}
+
+.container {
+
+    .row {
+        margin-top: 4em;
+        border-style: groove;
+        background: rgb(247, 250, 207);
+        background: radial-gradient(circle, rgba(247, 250, 207, 1) 0%, rgba(210, 212, 181, 1) 23%, rgba(236, 244, 247, 1) 100%);
+
+        .col-6 {
+            padding-left: 3em;
+            padding-right: 2em;
+            list-style: none;
+            text-align: center;
+            padding-top: 1em;
+
+        }
+
+        h2 {
+            height: 5em;
+
+        }
+
+    }
+
+}
+
+// footer aplicable a todos los html
+
+footer {
+    height: ($altura-frecuente)/15;
+    padding-bottom: 7em;
+    padding-top: 10em;
+    display: flex;
+    justify-content: space-around;
+    font-size: small;
+
+    .footera {
+        text-align: center;
+
+
+        h4 {
+            font-size: small;
+
+        }
+
+        h5 {
+            font-size: x-small;
+            font-weight: bolder;
+
+        }
+
+    }
+
+    .footerImg {
+        width: 10em;
+
+        img {
+            width: 2em;
+            border: none;
+
+        }
+
+    }
+
+}
+
+.footerP {
+    height: ($altura-frecuente)/15;
+    padding-bottom: 7em;
+    padding-top: 38em;
+    display: flex;
+    justify-content: space-around;
+    font-size: small;
+
+}
+
+@media (max-width:1100px)and(min-width:880px) {
+
+    header {
+
+        .contenedor {
+
+            ul {
+                margin-right: 7em;
+
+                li {
+                    button {
+                        padding-left: 1em;
+                        padding-right: 1em;
+
+                    }
+
+                }
+
+            }
+
+            .contenedor__logo {
+                height: 7em;
+                padding-left: 12em;
+                padding-top: 2em;
+
+            }
+
+        }
+
+    }
+
+}
+
+@media (max-width:752px)and(min-width:569px) {
+
+    .bodyP {
+        height: 700vh;
+
+        .footerP {
+            padding-top: 24em;
+
+        }
+
+    }
+
+}
+
+@media (max-width:878px)and(min-width:753px) {
+
+    .bodyP {
+        height: 420vh;
+
+        .footerP {
+            padding-top: 24em;
+
+        }
+
+    }
+    
+}
+
+@media (max-width:753px) {
+
+    .bodyP {
+        height: 600vh;
+
+        .footerP {
+            padding-top: 112em;
+
+        }
+
+    }
+
+}
+
+@media (max-width:879px) {
+
+    header {
+
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+
+            ul {
+                display: flex;
+                flex-flow: column wrap;
+                background-color: gray;
+                height: 12hv;
+
+                li,
+                .contacto {
+                    text-align: center;
+                    padding-left: 2em;
+                    border-right: solid;
+
+                    button {
+                        margin-left: -2em;
+                        margin-right: 1em;
+                        padding: 0.2em;
+
+                    }
+
+                }
+
+            }
+
+            .contenedor__logo {
+
+                img {
+                    margin-left: 8em;
+                    margin-top: 0.5em;
+
+                }
+
+            }
+
+        }
+    }
+
+    .container {
+        .row {
+            border: none;
+        }
+
+    }
+
+
+    .general {
+
+        margin-top: 7.5em;
+        display: flex;
+        flex-direction: column;
+
+        main {
+
+            margin-bottom: -25em;
+
+            .tango {
+                display: none;
+
+            }
+
+        }
+
+        .imagenes {
+            display: flex;
+            flex-flow: column;
+            margin-bottom: 70em;
+            padding-left: 5em;
+            gap: 10em;
+
+            .robertoArlt,
+            .homeroManzi,
+            .borges {
+                border: none;
+
+            }
+
+        }
+
+    }
+
+    .generalDos {
+        main {
+            margin-bottom: 21em;
+
+            .h2Hm {
+                padding-top: 8em;
+
+            }
+
+        }
+
+    }
+
+    main {
+        margin-bottom: $altura-frecuente/1.45;
+
+        .h2Jb {
+            padding-top: 8em;
+
+        }
+
+        .librosJb {
+
+            .librosJb__carousel {
+                display: flex;
+                justify-content: center;
+
+                .carousel-inner {
+                    width: 20em;
+
+                }
+
+            }
+
+        }
+
+        .footerP {
+            padding-top: 22em;
+
+        }
+
+    }
+
+    main {
+        .mb-3 {
+
+            h2 {
+                margin-top: 8em;
+
+            }
+
+        }
+
+    }
+
+    .container {
+        .row {
+            padding-top: 4em;
+            border-right: none;
+            border-left: none;
+            border-width: 0.4em;
+            border-radius: 10%;
+
+            .col-6 {
+                padding-left: 0;
+                padding-right: 0;
+                list-style: none;
+                text-align: center;
+
+            }
+
+        }
+
+    }
+}
+
+
+@media (max-width:568px) {
+    .bodyP {
+        height: 605vh;
+
+        .footerP {
+            padding-top: 115em;
+
+        }
+
+    }
+
+    .bodyC {
+        height: 375vh;
+
+    }
+
+}
+
+@media (max-width:358px) {
+    .bodyP {
+        height: 610vh;
+
+        .footerP {
+            padding-top: 115em;
+
+        }
+
+    }
+
+    .bodyB {
+        height: 384vh;
+
+        .mainC {
+            margin-bottom: 40em;
+
+        }
+
+    }
+
+}
+
+@media (max-width:368px) {
+    .bodyA {
+        height: 480vh;
+
+    }
+
+    .bodyPo {
+        height: 345vh;
+
+        .row {
+            margin-bottom: -2em;
+
+            .col-6 {
+                font-size: large;
+
+            }
+
+        }
+
+    }
+
+    .bodyB {
+        height: 384vh;
+
+        .mainC {
+            margin-bottom: 40em;
+
+        }
+
+    }
+
+}
